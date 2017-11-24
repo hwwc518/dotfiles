@@ -126,12 +126,6 @@ neofetch
 # wifi restart service
 alias netres='sudo service network-manager restart'
 
-# for running suggested bash command
-#eval $(thefuck --alias dammit)
-#eval $(thefuck --alias fuck)
-#eval $(thefuck --alias FUCK)
-eval $(thefuck --alias fixit)
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # for powerline
