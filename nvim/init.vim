@@ -17,6 +17,10 @@ inoremap kj <esc>
 nnoremap j gj
 nnoremap k gk
 
+" For terminal mode
+tnoremap kj <C-\><C-n>
+tnoremap jk <C-\><C-n>
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -26,6 +30,8 @@ map <C-l> <C-w>l
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
 nmap Q gqap
+
+map <silent> F :Files<CR>
 
 " easy access to nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -161,7 +167,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "
 "   " you complete me
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "
 "   " vim rtags
 Plug 'lyuts/vim-rtags'
@@ -175,6 +181,7 @@ Plug 'elzr/vim-json'
 "   " themes
 Plug 'ajh17/Spacegray.vim'
 Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-janah'
 
 "   " autocomplete tags for tags file (idk what this is rn)
 Plug 'ludovicchabant/vim-gutentags'
@@ -182,12 +189,23 @@ Plug 'ludovicchabant/vim-gutentags'
 "   " auto pairing for tags
 Plug 'jiangmiao/auto-pairs'
 
+"   " switch surroundings, ie quotes and pairs
+Plug 'tpope/vim-surround'
+
 "   " easy commenting
 Plug 'tpope/vim-commentary'
+
+"   " fuzzy searching
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+"   " git integration
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
-" Plugins to check out: ctrlP - navigating files, surround.vim - quotes, html, yankring - history, python mode 
+" Plugins to check out: ctrlP - navigating files, yankring - history, python mode 
 
 " colorscheme
+" autocmd ColorScheme janah highlight Normal ctermbg=235
 colorscheme gruvbox
 set background=dark    " Setting dark mode
