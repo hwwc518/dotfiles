@@ -2,7 +2,7 @@
 "stopinsert au InsertEnter * let updaterestore=&updatetime | set updatetime=15000 au InsertLeave * let &updatetime=updaterestore
 
 " Appearance
-let g:airline_theme='bubblegum'
+"let g:airline_theme='bubblegum'
 "let g:airline_powerline_fonts = 1
 "set guifont=Inconsolata\ for\ Powerline
 
@@ -181,7 +181,8 @@ Plug 'elzr/vim-json'
 "   " themes
 Plug 'ajh17/Spacegray.vim'
 Plug 'morhetz/gruvbox'
-Plug 'mhinz/vim-janah'
+"Plug 'mhinz/vim-janah'
+Plug 'Soares/base16.nvim'
 
 "   " autocomplete tags for tags file (idk what this is rn)
 Plug 'ludovicchabant/vim-gutentags'
@@ -199,6 +200,9 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+"   " syntax highlighting
+" Plug 'w0rp/ale'
+
 "   " git integration
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -207,5 +211,10 @@ call plug#end()
 
 " colorscheme
 " autocmd ColorScheme janah highlight Normal ctermbg=235
-colorscheme gruvbox
-set background=dark    " Setting dark mode
+set termguicolors
+let g:base16_airline=1
+
+set background=dark
+colorscheme railscasts
+"let base16colorspace=256
+"set background=dark    " Setting dark mode
