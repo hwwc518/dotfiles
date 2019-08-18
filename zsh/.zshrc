@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,6 +83,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# z - autojumper path to file
+. /home/hwwc518/work/bash_scripts/z.sh
+
 alias netres="sudo service network-manager restart"
 alias vi="nvim"
 alias g++="g++ -std=c++11"
@@ -90,6 +94,17 @@ alias g++="g++ -std=c++11"
 export PROJECT_HOME=$HOME/myprojects
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.myvirtualenv
+export PATH=/home/hwwc518/anaconda3/bin:$PATH
 source /usr/local/bin/virtualenvwrapper.sh
 
-neofetch
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+    fi
+
+# neofetch
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="/home/hwwc518/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source /home/hwwc518/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
